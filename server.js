@@ -78,31 +78,21 @@ const redirectLogin = (req, res, next) =>{
         }
  }
  
- 
- 
- 
- 
- 
- 
- 
- 
 app.get('/', (req, res)=>{
-    const { userId } = req.session
-    console.log(userId);
-    res.send(`
-    <h1> Welcome!</h1>
-    ${userId ?`<a href = '/home'> Home </a>
-    <form method='post' action='/logout'>
-    <button>Logout</button>
-    </form>` : `<a href = '/login'> Login </a>
-    <a href = '/register'> Register </a>
-`}
-    `)
+//     const { userId } = req.session
+//     console.log(userId);
+//     res.send(`
+//     <h1> Welcome!</h1>
+//     ${userId ?`<a href = '/home'> Home </a>
+//     <form method='post' action='/logout'>
+//     <button>Logout</button>
+//     </form>` : `<a href = '/login'> Login </a>
+//     <a href = '/register'> Register </a>
+// `}
+//     `)
+    return 'Hello World mga bano!';
 })
- 
- 
- 
- 
+
 app.get('/home', redirectLogin, async(req,res)=>{
     const {userId} =req.session
      if(userId){
